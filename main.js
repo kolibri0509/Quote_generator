@@ -44,14 +44,14 @@ function getRandomQuote() {
 
 async function getQuotes() {
     showLoadingSpinner();
-    const apiUrl = 'https://mocki.io/v1/b9b2b14f-f9e5-4c31-98cf-f50990a6bf84';
+    const apiUrl = 'https://type.fit/api/quotes';
     try {
         const response = await fetch(apiUrl);
         apiQuotes = await response.json();
+        getRandomQuote()
     } catch (error) {
         console.log(error)
     }
-    getRandomQuote()
 }
 function tweetQuote() {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
