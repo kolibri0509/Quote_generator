@@ -48,10 +48,10 @@ async function getQuotes() {
     try {
         const response = await fetch(apiUrl);
         apiQuotes = await response.json();
-        getRandomQuote()
     } catch (error) {
         console.log(error)
     }
+    getRandomQuote()
 }
 function tweetQuote() {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
